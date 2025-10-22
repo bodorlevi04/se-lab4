@@ -33,3 +33,8 @@ ELOFELTETELEK: 2 hajo: egyiknek a primary biztosan hibas, mig a secondary biztos
 A TESZT LEPESEI: GT4500,1,1,1,0 -> TORPEDO,ALL -> TORPEDO,ALL -> GT4500,1,0,1,1 -> TORPEDO,ALL -> TORPEDO,ALL
 ELVART EREDMENY: SUCCESS -> SUCCESS (elsobol lott) -> FAIL -> 
                  SUCCESS -> SUCCESS (masodikbol lott) -> FAIL
+
+6. TESZT
+
+Unknown command
+
