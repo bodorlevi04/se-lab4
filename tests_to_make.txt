@@ -1,0 +1,40 @@
+1. TESZT
+
+TESZTELT KOVETELMENY: SINGLE fire modeban a primary store lo eloszor.
+ELOFELTETELEK: van legalabb 1 torpedo mindketto storeban es a secondary biztosan nem tud loni.
+A TESZT LEPESEI: GT4500,1,0,1,1 -> TORPEDO,SINGLE
+ELVART EREDMENY: SUCCESS -> SUCCESS, ha a secondaryval kezdene, akkor FAIL lenne
+
+2. TESZT
+
+TESZTELT KOVETELMENY: SINGLE fire modeban felvaltva lonek.
+ELOFELTETELEK: van legalabb 2 torpedo primaryben a secondaryban legalabb 1 es biztosan nem tud loni
+A TESZT LEPESEI: GT4500,2,0,1,1 -> TORPEDO,SINGLE -> TORPEDO,SINGLE
+ELVART EREDMENY: SUCCESS -> SUCCESS (primaryvel kezd) -> FAIL ha tenyleg secondaryvel folytatja
+
+3. TESZT
+
+TESZTELT KOVETELMENY: SINGLE fire modeban, ha valamelyik ures, akkor ujra a masikbol probal loni
+ELOFELTETELEK: van legalabb 2 torpedo az egyikben de 0 a masikban. mindketto tud loni.
+A TESZT LEPESEI: GT4500,0,0,2,0 -> TORPEDO,SINGLE -> TORPEDO,SINGLE
+ELVART EREDMENY: SUCCESS -> SUCCESS (itt mar elegendo lenne, mert az elsovel probal kezdeni) -> SUCCESS (igy egymas utan ketszer loves ugyanazzal is tesztelve van)
+
+4. TESZT
+
+TESZTELT KOVETELMENY: SINGLE fire modeban, ha nem tud loni az egyik, akkor nem probalkozik a masikkal
+ELOFELTETELEK: van mindkettoben legalabb 1, primary nem tud loni, secondary tud
+A TESZT LEPESEI: GT4500,1,1,1,0 -> TORPEDO,SINGLE
+ELVART EREDMENY: SUCCESS -> FAIL (hiaba tudna a secondary loni, nem fog, mert a primary elsult)
+
+5. TESZT
+
+TESZTELT KOVETELMENY: ALL fire modeban egyszerre lo mindkettovel
+ELOFELTETELEK: 2 hajo: egyiknek a primary biztosan hibas, mig a secondary biztosan jo, masik pont forditva
+A TESZT LEPESEI: GT4500,1,1,1,0 -> TORPEDO,ALL -> TORPEDO,ALL -> GT4500,1,0,1,1 -> TORPEDO,ALL -> TORPEDO,ALL
+ELVART EREDMENY: SUCCESS -> SUCCESS (elsobol lott) -> FAIL -> 
+                 SUCCESS -> SUCCESS (masodikbol lott) -> FAIL
+
+6. TESZT
+
+Unknown command
+
